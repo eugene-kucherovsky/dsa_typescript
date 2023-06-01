@@ -4,7 +4,7 @@
 // Time Complexity: O(n log n)
 // Space Complexity: O(n)
 
-function merge(left: string[] | number[], right: string[] | number[]) {
+function merge(left: string[] | number[], right: string[] | number[]): any[] {
   const result = [];
 
   while (left.length && right.length) {
@@ -24,7 +24,7 @@ function merge(left: string[] | number[], right: string[] | number[]) {
   return result;
 }
 
-function mergeSort(arr: string[] | number[]): any {
+function mergeSort(arr: string[] | number[] | []): string[] | number[] | [] {
   if (arr.length < 2) {
     return arr;
   }

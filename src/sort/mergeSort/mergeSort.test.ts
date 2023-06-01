@@ -3,7 +3,7 @@ import { mergeSort } from "./mergeSort"
 import { describe, expect, it } from "vitest"
 
 
-describe("#bubbleSort", () => {
+describe("#mergeSort", () => {
     it("check equal accending numbers", () => {
         expect(mergeSort([2, 4, 5, 7, 1, 2, 3, 6])).toStrictEqual([1, 2, 2, 3, 4, 5, 6, 7])
     })

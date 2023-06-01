@@ -1,8 +1,11 @@
 // Bubble Sort
+// Difficulty level: easy
+
 // Time complexity: O(n²) - not efficient algorithm
+// Space complexity: O(1) 
 
 // basic version
-function bubbleSort(arr: any) {
+function bubbleSort(arr: number[] | string[]): number[] | string[] {
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 0; j < arr.length; j++) {
       if (arr[j] > arr[j + 1]) {
@@ -15,7 +18,7 @@ function bubbleSort(arr: any) {
   return arr;
 };
 
-function bubbleSortDescending(arr: any) {
+function bubbleSortDescending(arr: number[] | string[]): number[] | string[] {
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 0; j < arr.length; j++) {
       if (arr[j] < arr[j + 1]) {
