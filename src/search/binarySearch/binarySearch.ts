@@ -1,12 +1,9 @@
-
 // Binary Search
 // Required sorted array.
 
 // Time complexity: O(Log n)
 
-const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
-function binarySearch(array, element) {
+function binarySearch(array: number[] | string[], element: number | string) {
   let start = 0;
   let end = array.length - 1;
   let mid;
@@ -24,11 +21,7 @@ function binarySearch(array, element) {
   return `There is no element in array with value of ${element}`;
 }
 
-console.log(binarySearch(array, 9));
-console.log(binarySearch(array, 40));
-
-
-function binarySearchRecursive(array, element, start = 0, end = array.length - 1) {
+function binarySearchRecursive(array: number[] | string[], element: number | string, start = 0, end = array.length - 1) {
   const mid = Math.floor(start + (end - start) / 2)
 
   if (end >= start) {
@@ -50,5 +43,4 @@ function binarySearchRecursive(array, element, start = 0, end = array.length - 1
   }
 }
 
-binarySearchRecursive(array, 9);
-binarySearchRecursive(array, 40);
+export {binarySearch, binarySearchRecursive};
