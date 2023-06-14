@@ -42,22 +42,25 @@
 // 0 -> 2 -> 1 -> 0 --- contains 3 cycled verticies 
 // 0 -> 3
 // 1 -> 4
-const graph = [
-  [2, 3], 
-  [0, 4], 
-  [1], 
-  [], 
-  [],
-];
+// const graph = [
+//   [2, 3], 
+//   [0, 4], 
+//   [1], 
+//   [], 
+//   [],
+// ];
 
-const graph_2 = [ 
-  [ 1, 2 ], 
-  [ 2 ], 
-  [ 0, 3 ], 
-  [ 3 ] 
-];
+// const graph_2 = [ 
+//   [ 1, 2 ], 
+//   [ 2 ], 
+//   [ 0, 3 ], 
+//   [ 3 ] 
+// ];
 
-function depth_first_traversal(graph, vertex) {
+function depth_first_traversal(graph: number[][], vertex: any) {
+
+  let result = [];
+
   let visited = [];
 
   for (let i = 0; i < graph.length; i++) visited.push(false);
@@ -65,10 +68,11 @@ function depth_first_traversal(graph, vertex) {
   let stack = [vertex];
 
   while (stack.length > 0) {
-    let curr = stack.pop();
+    let curr = stack.pop()!;
 
     if (visited[curr] == false) {
       console.log(curr);
+      result.push(curr);
       visited[curr] = true;
     }
 
@@ -76,7 +80,11 @@ function depth_first_traversal(graph, vertex) {
       if (!visited[graph[curr][node]]) stack.push(graph[curr][node]);
     }
   }
+
+  return result;
 }
 
-depth_first_traversal(graph, 0); // 0 3 2 1 4
-depth_first_traversal(graph_2, 2); // 2 3 0 1
+export {depth_first_traversal};
+
+// depth_first_traversal(graph, 0); // 0 3 2 1 4
+// depth_first_traversal(graph_2, 2); // 2 3 0 1
